@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Instalando dependencias
+yum install python-psycopg2 -y
+yum install cyrus-sasl cyrus-sasl-lib cyrus-sasl-plain -y
+yum install mutt -y
+echo ' Dependencies installation Complete'
+cp /etc/pki/tls/cert.pem /etc/postfix/cacert.pem
+cp -f bin/main.cf /etc/postfix/
+cp bin/sasl_passwd /etc/postfix/
+postmap /etc/postfix/sasl_passwd
+echo ' SSL Certificates Complete'
+cp bin/.muttrc /root/
+echo ' Mutt configuration Complete'
+#Preparando el servicio para que sea gestionado por systemd
+cp bin/trunkstatuscv-4.1.py /opt/
+cp bin/trunkStatus.service /etc/systemd/system/
+echo ' Installation Complete !'
