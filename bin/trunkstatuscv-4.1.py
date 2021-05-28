@@ -16,9 +16,9 @@ def EnviarCorreo(data):
 	global peer
 	global nameCliente
 	global ip
-	remitente = "Contactvox UCS  <servicios@sidevox.com>"
+	remitente = "Contactvox UCS  <helpdesk@contactvox.com>"
 	#destinatario = ["Cliente <workforce@happy-solutions.com.co>","Soporte <soporte@contactvox.com>"]
-	destinatario = "Soporte <eachig@sidevox.com>"
+	destinatario = ["Soporte <eachig@contactvox.com>","Soporte <jpardo@contactvox.com>]
 	asunto = "Contactvox UCS Aviso Troncal"
 	msg=PreparCorreo(data)
 	#print msg
