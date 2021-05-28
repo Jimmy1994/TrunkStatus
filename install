@@ -10,8 +10,6 @@ cp -f bin/main.cf /etc/postfix/
 cp bin/sasl_passwd /etc/postfix/
 postmap /etc/postfix/sasl_passwd
 echo ' SSL Certificates Complete'
-cp bin/.muttrc /root/
-echo ' Mutt configuration Complete'
 #Preparando el servicio para que sea gestionado por systemd
 cp bin/trunkstatuscv-4.1.py /opt/
 cp bin/trunkStatus.service /etc/systemd/system/
